@@ -1,2 +1,2 @@
 # !!!!! Do not use as submodule this outside of Beey-server
-# this exist mostly for refactoring chains a removing V1 stuff
+# This exist mostly for refactoring the dataexchangemodel OUT of Backend without breaking V1 stuff
