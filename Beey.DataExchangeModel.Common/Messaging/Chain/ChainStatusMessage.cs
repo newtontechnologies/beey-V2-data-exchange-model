@@ -4,7 +4,7 @@ using Beey.DataExchangeModel.Messaging;
 
 namespace Backend.Messaging.Chain;
 
-public abstract record ChainStatusMessage(int Id, ImmutableArray<int> Index, int? ProjectId, int? ChainId, DateTimeOffset Sent, StatusNode? Statuses)
+public sealed record ChainStatusMessage(int Id, ImmutableArray<int> Index, int? ProjectId, int? ChainId, DateTimeOffset Sent, StatusNode? Statuses)
     : Message(Id, Index, ProjectId, ChainId, KnownSubsystemNames.ChainControl, Sent)
 {
     public SubsystemStatus? this[string name] => Statuses?[name]?.Status;
