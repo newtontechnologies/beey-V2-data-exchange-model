@@ -4,8 +4,6 @@ using System.Text.Json.Serialization;
 using Backend.Messaging.Chain;
 using Beey.DataExchangeModel.Messaging;
 
-using static Beey.DataExchangeModel.Messaging.KnownSubsystems;
-
 namespace Beey.DataExchangeModel.Serialization.JsonConverters;
 
 public class MessageJsonConverterWithTypeDiscriminator : JsonConverter<Message>
@@ -52,35 +50,35 @@ public class MessageJsonConverterWithTypeDiscriminator : JsonConverter<Message>
         switch (value.Type)
         {
             case MessageType.Started:
-                JsonSerializer.Serialize(writer, (StartedMessage)value, KnownSubsystemsBaseContext.Default.StartedMessage);
+                JsonSerializer.Serialize(writer, (StartedMessage)value, KnownSubstemsSerializerContext.Default.StartedMessage);
                 return;
 
             case MessageType.Progress:
-                JsonSerializer.Serialize(writer, (ProgressMessage)value, KnownSubsystemsBaseContext.Default.ProgressMessage);
+                JsonSerializer.Serialize(writer, (ProgressMessage)value, KnownSubstemsSerializerContext.Default.ProgressMessage);
                 return;
 
             case MessageType.Failed:
-                JsonSerializer.Serialize(writer, (FailedMessage)value, KnownSubsystemsBaseContext.Default.FailedMessage);
+                JsonSerializer.Serialize(writer, (FailedMessage)value, KnownSubstemsSerializerContext.Default.FailedMessage);
                 return;
 
             case MessageType.Completed:
-                JsonSerializer.Serialize(writer, (CompletedMessage)value, KnownSubsystemsBaseContext.Default.CompletedMessage);
+                JsonSerializer.Serialize(writer, (CompletedMessage)value, KnownSubstemsSerializerContext.Default.CompletedMessage);
                 return;
 
             case MessageType.ChainStatus:
-                JsonSerializer.Serialize(writer, (ChainStatusMessage)value, KnownSubsystemsBaseContext.Default.ChainStatusMessage);
+                JsonSerializer.Serialize(writer, (ChainStatusMessage)value, KnownSubstemsSerializerContext.Default.ChainStatusMessage);
                 return;
 
             case MessageType.ChainCommand:
-                JsonSerializer.Serialize(writer, (ChainCommandMessage)value, KnownSubsystemsBaseContext.Default.ChainCommandMessage);
+                JsonSerializer.Serialize(writer, (ChainCommandMessage)value, KnownSubstemsSerializerContext.Default.ChainCommandMessage);
                 return;
 
             case MessageType.Panic:
-                JsonSerializer.Serialize(writer, (PanicMessage)value, KnownSubsystemsBaseContext.Default.PanicMessage);
+                JsonSerializer.Serialize(writer, (PanicMessage)value, KnownSubstemsSerializerContext.Default.PanicMessage);
                 return;
 
             case MessageType.Tracing:
-                JsonSerializer.Serialize(writer, (TracingMessage)value, KnownSubsystemsBaseContext.Default.TracingMessage);
+                JsonSerializer.Serialize(writer, (TracingMessage)value, KnownSubstemsSerializerContext.Default.TracingMessage);
                 return;
         }
         throw new NotImplementedException($"Unknown message {value}");
