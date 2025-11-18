@@ -1,35 +1,35 @@
 ﻿namespace Beey.DataExchangeModel.Messaging;
 public static class KnownSubsystems
 {
-    public const string UploadSubsystem = "Upload";
-    public const string MediaIdentificationSubsystem = "MediaIdentification";
-    public const string TranscodingVideoSubsystem = "TranscodingVideo";
-    public const string TranscodingAudioSubsystem = "TranscodingAudio";
-    public const string MediaFileIndexingSubsystem = "MediaFileIndexing";
-    public const string MediaFilePackagingSubsystem = "MediaFilePackaging";
-    public const string RecognitionSubsystem = "Recognition";
-    public const string DiarizationSubsystem = "Diarization";
+    public const string Upload = "Upload";
+    public const string MediaIdentification = "MediaIdentification";
+    public const string TranscodingVideo = "TranscodingVideo";
+    public const string TranscodingAudio = "TranscodingAudio";
+    public const string MediaFileIndexing = "MediaFileIndexing";
+    public const string MediaFilePackaging = "MediaFilePackaging";
+    public const string Recognition = "Recognition";
+    public const string Diarization = "Diarization";
 
-    public const string RawRecognitionSubsystem = "RawRecognition";
-    public const string RawDiarizationSubsystem = "RawDiarization";
+    public const string RawRecognition = "RawRecognition";
+    public const string RawDiarization = "RawDiarization";
 
-    public const string NanoGridCombinedSubsystem = "NanoGrid";
+    public const string NanoGridCombined = "NanoGrid";
 
-    public const string SpeakerIdentificationSubsystem = "SpeakerIdentification";
-    public const string SppSubsystem = "Spp";
+    public const string SpeakerIdentification = "SpeakerIdentification";
+    public const string Spp = "Spp";
 
-    public const string TranscriptionStreamingSubsystem = "TranscriptionStreaming";
-    public const string LiveSubtitlesStreamingSubsystem = "LiveSubtitlesStreaming";
-    public const string LiveTranscriptionStreamingSubsystem = "LiveTranscriptionStreaming";
+    public const string TranscriptionStreaming = "TranscriptionStreaming";
+    public const string LiveSubtitlesStreaming = "LiveSubtitlesStreaming";
+    public const string LiveTranscriptionStreaming = "LiveTranscriptionStreaming";
 
     public const string TranscriptionTracking = "TranscriptionTracking";
     public const string TranscriptionTimeLogging = "TranscriptionTimeLogging";
     public const string TranscriptionCreation = "TranscriptionCreation";
     public const string ProjectStatusMonitor = "ProjectStatusMonitor";
     public const string VoiceprintAggregation = "VoiceprintAggregation";
-    public const string TranscriptionQueueTrackingSubsystem = "TranscriptionQueueTracking";
-    public const string LowQualityAudioSubsystem = "LowQualityAudio";
-    public const string SceneDetectionSubsystem = "SceneDetection";
+    public const string TranscriptionQueueTracking = "TranscriptionQueueTracking";
+    public const string LowQualityAudio = "LowQualityAudio";
+    public const string SceneDetection = "SceneDetection";
 
     public const string TranscodingGroup = "Transcoding";
     public const string TranscribingGroup = "Transcribing";
