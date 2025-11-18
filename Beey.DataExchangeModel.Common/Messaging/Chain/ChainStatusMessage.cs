@@ -5,7 +5,7 @@ using Beey.DataExchangeModel.Messaging;
 namespace Backend.Messaging.Chain;
 
 public sealed record ChainStatusMessage(int Id, ImmutableArray<int> Index, int? ProjectId, int? ChainId, DateTimeOffset Sent, StatusNode? Statuses)
-    : Message(Id, Index, ProjectId, ChainId, KnownSubsystemNames.ChainControl, Sent)
+    : Message(Id, Index, ProjectId, ChainId, KnownSubsystems.ChainControl, Sent)
 {
     public SubsystemStatus? this[string name] => Statuses?[name]?.Status;
     [JsonPropertyOrder(int.MinValue)]//always must be second for deserialization to work

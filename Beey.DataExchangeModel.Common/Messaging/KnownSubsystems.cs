@@ -1,5 +1,5 @@
 ﻿namespace Beey.DataExchangeModel.Messaging;
-public static class KnownSubsystemNames
+public static class KnownSubsystems
 {
     public const string UploadSubsystem = "Upload";
     public const string MediaIdentificationSubsystem = "MediaIdentification";
