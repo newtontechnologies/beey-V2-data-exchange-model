@@ -29,7 +29,7 @@ public enum ChainCommand
 }
 
 public sealed record ChainCommandMessage(int Id, ImmutableArray<int> Index, int? ProjectId, int? ChainId, DateTimeOffset Sent, ChainCommand Command)
-    : Message(Id, Index, ProjectId, ChainId, KnownSubsystems.ChainControl, Sent)
+    : Message(Id, Index, ProjectId, ChainId, "ChainControl", Sent)
 {
     [JsonPropertyOrder(int.MinValue)]//always must be second for deserialization to work
     public override MessageType Type => MessageType.ChainCommand;
