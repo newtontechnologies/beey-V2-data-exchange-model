@@ -16,17 +16,15 @@ public class NgHeadingEvent : NgEvent
 
     public NgHeadingEvent()
     {
-        Level = 1;
     }
 
     public NgHeadingEvent(JsonObject source) : base(source)
     {
         Begin = TimeSpan.FromMilliseconds(source["b"].Deserialize<long>());
         Heading = source["h"]?.Deserialize<string>();
-        if (source.TryGetPropertyValue("l", out var lToken))
-            Level = lToken.Deserialize<int>();
-        else
-            Level = 1;
+        Level = source.TryGetPropertyValue("l", out var lToken)
+            ? lToken.Deserialize<int>()
+            : 1;
     }
 
     public override JsonObject Serialize()
