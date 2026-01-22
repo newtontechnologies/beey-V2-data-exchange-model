@@ -10,4 +10,7 @@
     <PackageReference Include="libphonenumber-csharp" Version="9.0.15" />
     <PackageReference Include="Microsoft.Extensions.Configuration.Abstractions" Version="9.0.9" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Beey.DataExchangeModel.Chain\Beey.DataExchangeModel.Chain.csproj" />
+  </ItemGroup>
 </Project>
