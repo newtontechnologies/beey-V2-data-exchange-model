@@ -1,12 +1,5 @@
-﻿using Beey.DataExchangeModel.Projects;
+﻿using System.Text.Json.Serialization;
 using Beey.DataExchangeModel.Serialization.JsonConverters;
-using Microsoft.Extensions.Configuration;
-using System;
-using System.Collections.Generic;
-using System.Dynamic;
-using System.Text;
-using System.Text.Json;
-using System.Text.Json.Serialization;
 
 namespace Beey.DataExchangeModel.Messaging.Subsystems;
 

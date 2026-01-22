@@ -1,11 +1,4 @@
-﻿
-
-using Beey.DataExchangeModel.Messaging.Subsystems;
-using Microsoft.Extensions.Configuration;
-using System;
-using System.Collections.Generic;
-
-namespace Beey.DataExchangeModel.Messaging.Subsystems;
+﻿namespace Beey.DataExchangeModel.Messaging.Subsystems;
 
 public class UploadConfig
 {
@@ -17,7 +10,9 @@ public class UploadConfig
     public string FileName { get; set; }
     public long? TotalFileSize { get; set; }
 
-    public UploadConfig() { }
+    public UploadConfig()
+    {
+    }
 
     [Obsolete("transcriptions without SavingMedia are not supported")]
     public UploadConfig(bool saveMedia, int userId)
