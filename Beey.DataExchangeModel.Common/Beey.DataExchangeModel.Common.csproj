@@ -1,6 +1,6 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
-    <TargetFramework>net8.0</TargetFramework>
+    <TargetFramework>net10.0</TargetFramework>
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
     <DebugType>embedded</DebugType>
@@ -9,5 +9,8 @@
     <PackageReference Include="beey.trsx" Version="3.10.0" />
     <PackageReference Include="libphonenumber-csharp" Version="9.0.15" />
     <PackageReference Include="Microsoft.Extensions.Configuration.Abstractions" Version="9.0.9" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Beey.DataExchangeModel.Chain\Beey.DataExchangeModel.Chain.csproj" />
   </ItemGroup>
 </Project>

@@ -1,12 +1,5 @@
-﻿using Beey.DataExchangeModel.Projects;
+﻿using System.Text.Json.Serialization;
 using Beey.DataExchangeModel.Serialization.JsonConverters;
-using Microsoft.Extensions.Configuration;
-using System;
-using System.Collections.Generic;
-using System.Dynamic;
-using System.Text;
-using System.Text.Json;
-using System.Text.Json.Serialization;
 
 namespace Beey.DataExchangeModel.Messaging.Subsystems;
 
@@ -29,4 +22,10 @@ public class MediaIdentificationData : SubsystemData<MediaIdentificationData>
 
     public string? RawData { get; set; }
     public string? Error { get; set; }
+}
+
+public class MediaInfo
+{
+    public bool HasVideo { get; set; }
+    public bool IsPackaged { get; set; }
 }
