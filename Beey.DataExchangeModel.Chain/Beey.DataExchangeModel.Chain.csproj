@@ -10,8 +10,4 @@
     <PackageReference Include="beey.trsx" Version="3.10.0" />
   </ItemGroup>
 
-  <ItemGroup>
-    <Folder Include="Voiceprints\" />
-  </ItemGroup>
-
 </Project>

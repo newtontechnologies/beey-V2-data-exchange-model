@@ -23,3 +23,9 @@ public class MediaIdentificationData : SubsystemData<MediaIdentificationData>
     public string? RawData { get; set; }
     public string? Error { get; set; }
 }
+
+public class MediaInfo
+{
+    public bool HasVideo { get; set; }
+    public bool IsPackaged { get; set; }
+}

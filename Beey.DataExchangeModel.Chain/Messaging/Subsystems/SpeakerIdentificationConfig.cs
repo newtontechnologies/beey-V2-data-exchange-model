@@ -1,8 +1,4 @@
-﻿using Microsoft.Extensions.Configuration;
-using System;
-using System.Collections.Generic;
-using System.Globalization;
-using Beey.DataExchangeModel.Common.Voiceprints;
+﻿using Beey.DataExchangeModel.Common.Voiceprints;
 
 namespace Beey.DataExchangeModel.Messaging.Subsystems;
 
