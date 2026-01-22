@@ -1,9 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text.Json;
+﻿using System.Text.Json;
 using System.Text.Json.Nodes;
-using System.Threading.Tasks;
 
 
 namespace Beey.DataExchangeModel.Transcriptions;
@@ -25,6 +21,7 @@ public abstract class NgEvent
             "p" => new NgPhraseEvent(e),
             "r" => new NgRecoveryEvent(e),
             "v" => new NgVoiceprintEvent(e),
+            "h" => new NgHeadingEvent(e),
             _ => throw new NotImplementedException(),
         };
     }
