@@ -8,7 +8,7 @@ public class RecognitionData : SubsystemData<RecognitionData>
 {
     [JsonConverter(typeof(JsonNgEventConverter))]
     [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
-    public NgEvent NgEvent { get; set; }
+    public NgEvent? NgEvent { get; set; }
 
     [JsonConverter(typeof(JsonNullableConverter<JsonTimeSpanConverter, TimeSpan>))]
     [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
@@ -21,5 +21,4 @@ public class RecognitionData : SubsystemData<RecognitionData>
     [JsonConverter(typeof(JsonNgEventConverter))]
     [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
     public NgSpeakerEvent? IntegratedDiarizationData { get; set; }
-    
 }
