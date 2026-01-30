@@ -9,13 +9,12 @@ public class NgPhraseLookAheadEvent : NgEvent
 {
     public TimeSpan End { get; set; }
 
-    public string? Text { get; set; }
-    public double Confidence { get; set; }
-    public string? Phonetics { get; set; }
+    public string? Text { get; set; } = null;
+    public double Confidence { get; set; } = 1;
+    public string? Phonetics { get; set; } = null;
 
     public NgPhraseLookAheadEvent()
     {
-        Confidence = 1.0;
     }
 
     public NgPhraseLookAheadEvent(JsonObject source) : base(source)
@@ -34,15 +33,20 @@ public class NgPhraseLookAheadEvent : NgEvent
 
     public override JsonObject Serialize()
     {
-        return
+        var ret =
             new JsonObject()
             {
                 { "b", (long)Begin.TotalMilliseconds },
                 { "e", (long)End.TotalMilliseconds },
                 { "k", "l" },
-                { "t", Text },
-                { "c", Confidence },
-                { "p", Phonetics },
             };
+
+        if (Text is { })
+            ret.Add("t", Text);
+
+        if (Phonetics is { })
+            ret.Add("p", Phonetics);
+
+        return ret;
     }
 }
