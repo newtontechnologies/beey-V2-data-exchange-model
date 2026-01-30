@@ -11,6 +11,6 @@ public class TranscriptionStreamingData : SubsystemData<TranscriptionStreamingDa
     public SpeakerIdentificationData? SpeakerData { get; set; }
     public NgHeadingEvent? Heading { get; set; }
 
-    public NgPhraseLookAheadEvent? Hypothesis { get; set; }
+    public NgPhraseLookAheadEvent[]? Hypothesis { get; set; }
     public TimeSpan? RecognitionLength { get; set; }
 }
