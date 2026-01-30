@@ -11,6 +11,7 @@ public class NgPhraseLookAheadEvent : NgEvent
 
     public string? Text { get; set; }
     public double Confidence { get; set; }
+    public string? Phonetics { get; set; }
 
     public NgPhraseLookAheadEvent()
     {
@@ -26,6 +27,9 @@ public class NgPhraseLookAheadEvent : NgEvent
             Confidence = cToken.Deserialize<double>();
         else
             Confidence = 1.0;
+
+        if (source.TryGetPropertyValue("p", out var pToken))
+            Phonetics = pToken.Deserialize<string>();
     }
 
     public override JsonObject Serialize()
@@ -38,6 +42,7 @@ public class NgPhraseLookAheadEvent : NgEvent
                 { "k", "l" },
                 { "t", Text },
                 { "c", Confidence },
+                { "p", Phonetics },
             };
     }
 }
