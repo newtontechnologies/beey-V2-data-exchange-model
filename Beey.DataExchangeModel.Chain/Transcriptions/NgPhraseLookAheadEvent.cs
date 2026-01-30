@@ -1,5 +1,6 @@
 ﻿using System.Text.Json;
 using System.Text.Json.Nodes;
+using System.Text.Json.Serialization;
 
 
 
@@ -9,8 +10,23 @@ public class NgPhraseLookAheadEvent : NgEvent
 {
     public TimeSpan End { get; set; }
 
+    [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
     public string? Text { get; set; } = null;
-    public double Confidence { get; set; } = 1;
+
+    [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingDefault)]
+    public double? Confidence
+    {
+        get => field;
+        set
+        {
+            if (value is { } v && Math.Abs(v - 1) < 0.001)
+                value = null;
+
+            field = value;
+        }
+    } = default;
+
+    [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
     public string? Phonetics { get; set; } = null;
 
     public NgPhraseLookAheadEvent()
@@ -24,8 +40,6 @@ public class NgPhraseLookAheadEvent : NgEvent
         Text = source["t"]?.Deserialize<string>();
         if (source.TryGetPropertyValue("c", out var cToken))
             Confidence = cToken.Deserialize<double>();
-        else
-            Confidence = 1.0;
 
         if (source.TryGetPropertyValue("p", out var pToken))
             Phonetics = pToken.Deserialize<string>();
@@ -46,6 +60,10 @@ public class NgPhraseLookAheadEvent : NgEvent
 
         if (Phonetics is { })
             ret.Add("p", Phonetics);
+
+        if (Confidence is { } c)
+            ret.Add("c", Confidence);
+
 
         return ret;
     }
