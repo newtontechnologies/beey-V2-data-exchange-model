@@ -1,7 +1,6 @@
 ﻿using System.Text.Json;
-using Beey.DataExchangeModel.Messaging.Subsystems;
-using System.Text.Json.Serialization;
 using System.Text.Json.Nodes;
+using System.Text.Json.Serialization;
 
 namespace Beey.DataExchangeModel.Projects;
 
@@ -51,3 +50,17 @@ public class ProjectDto : ConcurrentEntityDto
         get; set;
     }
 }
+
+public record TranscriptionConfig(
+    bool SaveTrsx,
+    string Language,
+    string Profile,
+    bool WithPPC,
+    bool WithVAD,
+    bool WithPunctuation,
+    int UserId,
+    bool TrialTranscription,
+    bool WithSpeakerId,
+    bool WithDiarization,
+    bool WithUserLex
+    );
